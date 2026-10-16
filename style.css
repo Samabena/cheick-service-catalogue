@@ -1,0 +1,156 @@
+/* Cheick Service — styles. N'emploie que les variables de tokens.css. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--fond); color: var(--texte);
+  font-family: var(--police-texte); font-size: var(--corps); line-height: var(--ligne);
+  padding-bottom: var(--pas-9);
+}
+h1, h2, h3, p, ol { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: var(--rayon-petit); }
+.ico { width: 20px; height: 20px; fill: currentColor; flex: none; }
+
+/* Enveloppe commune */
+.entete__barre, main > section, .catalogue, .pied {
+  width: 100%; max-width: var(--largeur-max); margin-inline: auto; padding-inline: var(--gouttiere);
+}
+
+/* En-tête */
+.entete { border-bottom: var(--trait); background: var(--fond); }
+.entete__barre { display: flex; align-items: center; justify-content: space-between; gap: var(--pas-3); min-height: 60px; }
+.marque { font-family: var(--police-titre); font-weight: var(--graisse-prix); font-size: var(--taille-titre-3); text-decoration: none; letter-spacing: -0.01em; }
+.lien-wa { display: inline-flex; align-items: center; gap: var(--pas-2); min-height: 44px; font-weight: var(--graisse-forte); font-size: var(--taille-petit); text-decoration: none; color: var(--action); }
+.lien-wa:hover { color: var(--action-survol); text-decoration: underline; }
+
+/* Boutons */
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--pas-2);
+  min-height: var(--hauteur-bouton); padding: 0 var(--pas-5); border-radius: var(--rayon-petit);
+  font-family: var(--police-texte); font-weight: var(--graisse-forte); font-size: var(--corps);
+  line-height: 1.2; text-align: center; text-decoration: none; cursor: pointer;
+  transition: background-color var(--duree-survol) var(--courbe), color var(--duree-survol) var(--courbe);
+}
+.bouton--plein { background: var(--action); color: var(--action-texte); }
+.bouton--plein:hover { background: var(--action-survol); }
+.bouton--plein:active { background: var(--accent-800); }
+.bouton--trait { color: var(--texte); border: 1.5px solid var(--texte); background: transparent; }
+.bouton--trait:hover { background: var(--surface); }
+.bouton--large { width: 100%; }
+
+/* Haut de page */
+.accueil { padding-top: var(--pas-6); padding-bottom: var(--pas-6); }
+.accueil__texte-bloc { display: grid; gap: var(--pas-4); }
+.accueil__image { display: none; margin: 0; }
+.surtitre { font-size: var(--taille-etiquette); font-weight: var(--graisse-forte); letter-spacing: .08em; text-transform: uppercase; color: var(--texte-doux); }
+.accueil__titre { font-family: var(--police-titre); font-weight: var(--graisse-titre); font-size: var(--taille-titre-1); line-height: 1.08; letter-spacing: -0.015em; max-width: 18ch; }
+.accueil__texte { color: var(--texte-doux); max-width: 46ch; }
+.accueil__prix { font-size: var(--corps); }
+.accueil__prix strong { font-family: var(--police-titre); font-weight: var(--graisse-prix); font-size: var(--taille-prix); }
+.accueil__actions { display: grid; gap: var(--pas-3); margin-top: var(--pas-1); }
+.rayons-nav { display: flex; flex-wrap: wrap; gap: var(--pas-2); margin-top: var(--pas-2); }
+.rayons-nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--pas-4);
+  border: var(--trait); border-radius: 999px; background: var(--surface);
+  font-size: var(--taille-petit); font-weight: var(--graisse-forte); text-decoration: none;
+}
+.rayons-nav a:hover { border-color: var(--bordure-forte); }
+
+/* Les trois gestes */
+.etapes { padding-top: var(--pas-6); padding-bottom: var(--pas-6); border-top: var(--trait); display: grid; gap: var(--pas-5); }
+.etapes__titre, .questions__titre { font-family: var(--police-titre); font-weight: var(--graisse-titre); font-size: var(--taille-titre-2); line-height: 1.15; }
+.etapes__liste { list-style: none; padding: 0; display: grid; gap: var(--pas-4); }
+.etapes__liste li { display: grid; grid-template-columns: 40px 1fr; gap: var(--pas-3); align-items: start; }
+.etapes__num {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--texte); font-family: var(--police-titre); font-weight: var(--graisse-prix);
+}
+.etapes__liste p { padding-top: var(--pas-2); }
+
+/* Catalogue */
+.catalogue { display: grid; gap: var(--pas-8); padding-top: var(--pas-6); padding-bottom: var(--pas-8); border-top: var(--trait); }
+.rayon { display: grid; gap: var(--pas-5); scroll-margin-top: var(--pas-4); }
+.rayon__tete { display: grid; gap: var(--pas-1); }
+.rayon__titre { font-family: var(--police-titre); font-weight: var(--graisse-titre); font-size: var(--taille-titre-2); line-height: 1.15; }
+.rayon__phrase { color: var(--texte-doux); }
+.rayon__note { font-size: var(--taille-petit); color: var(--texte-doux); border-left: 3px solid var(--bordure-forte); padding-left: var(--pas-3); }
+.grille { display: grid; gap: var(--pas-4); grid-template-columns: 1fr; }
+
+.article { display: flex; flex-direction: column; background: var(--surface); border: var(--trait); border-radius: var(--rayon-grand); overflow: hidden; }
+.photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--fond-photo); border-bottom: var(--trait); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo--entier img { object-fit: contain; }
+/* Photos très larges (bureaux) : on garde leur proportion, sans bandes vides */
+.photo--large { aspect-ratio: auto; }
+.photo--large img { position: static; height: auto; }
+.photo--blanc { background: var(--blanc); }
+.article__corps { flex: 1; display: flex; flex-direction: column; gap: var(--pas-2); padding: var(--pas-4) var(--pas-4) var(--pas-5); }
+.badge { align-self: flex-start; background: var(--badge-fond); color: var(--badge-texte); font-size: var(--taille-etiquette); font-weight: var(--graisse-forte); padding: 2px var(--pas-2); border-radius: var(--rayon-petit); }
+.article__nom { font-family: var(--police-titre); font-weight: var(--graisse-titre); font-size: var(--taille-titre-3); line-height: 1.2; }
+.article__detail { font-size: var(--taille-petit); color: var(--texte-doux); }
+.article__prix { margin-top: auto; padding-top: var(--pas-2); font-family: var(--police-titre); font-weight: var(--graisse-prix); font-size: var(--taille-prix); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.devise { font-size: var(--taille-petit); font-weight: var(--graisse-titre); color: var(--texte-doux); }
+.article .bouton { margin-top: var(--pas-2); width: 100%; }
+
+/* Questions */
+.questions { display: grid; gap: var(--pas-3); padding-top: var(--pas-6); padding-bottom: var(--pas-8); border-top: var(--trait); }
+.questions__titre { margin-bottom: var(--pas-2); }
+details { background: var(--surface); border: var(--trait); border-radius: var(--rayon-grand); }
+summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--pas-3); min-height: 56px; padding: var(--pas-3) var(--pas-5); font-family: var(--police-titre); font-weight: var(--graisse-titre); font-size: var(--taille-titre-3); line-height: 1.25; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--police-texte); font-size: var(--taille-titre-2); line-height: 1; color: var(--texte-doux); }
+details[open] summary::after { content: "–"; }
+details p { padding: 0 var(--pas-5) var(--pas-5); color: var(--texte-doux); max-width: 60ch; }
+
+/* Dernier appel */
+.appel { background: var(--inverse-fond); color: var(--inverse-texte); border-radius: var(--rayon-grand); padding: var(--pas-7) var(--pas-5); display: grid; gap: var(--pas-4); justify-items: start; }
+main > .appel { width: calc(100% - 2 * var(--gouttiere)); }
+.appel__titre { font-family: var(--police-titre); font-weight: var(--graisse-titre); font-size: var(--taille-titre-2); line-height: 1.15; }
+.appel__texte { color: var(--inverse-doux); max-width: 44ch; }
+
+/* Pied de page */
+.pied { padding-top: var(--pas-7); padding-bottom: var(--pas-6); display: grid; gap: var(--pas-2); font-size: var(--taille-petit); color: var(--texte-doux); }
+.pied__marque { font-family: var(--police-titre); font-weight: var(--graisse-prix); font-size: var(--taille-titre-3); color: var(--texte); }
+.pied a { color: var(--texte); font-weight: var(--graisse-forte); }
+.pied__mention { margin-top: var(--pas-3); }
+
+/* Bouton WhatsApp flottant (téléphone) */
+.wa-flottant {
+  position: fixed; right: var(--gouttiere); bottom: var(--gouttiere); z-index: 10;
+  display: inline-flex; align-items: center; gap: var(--pas-2); min-height: var(--hauteur-bouton); padding: 0 var(--pas-5);
+  border-radius: 999px; background: var(--action); color: var(--action-texte);
+  font-weight: var(--graisse-forte); text-decoration: none; box-shadow: var(--ombre-flottante);
+}
+.wa-flottant:hover { background: var(--action-survol); }
+
+/* Plus large que le téléphone */
+@media (min-width: 640px) {
+  .accueil__actions { grid-auto-flow: column; justify-content: start; }
+  .bouton--large { width: auto; }
+  .grille { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .etapes__liste { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--pas-5); }
+  .etapes__liste li { grid-template-columns: 1fr; }
+  .etapes__liste p { padding-top: 0; }
+}
+@media (min-width: 960px) {
+  :root { --gouttiere: 32px; }
+  .accueil { padding-top: var(--pas-8); padding-bottom: var(--pas-7); }
+  .grille { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .catalogue { gap: var(--pas-9); }
+  .rayon { grid-template-columns: 260px 1fr; gap: var(--pas-6); align-items: start; }
+  .rayon__tete { position: sticky; top: var(--pas-5); }
+  .rayon__note { grid-column: 2; }
+  .accueil { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--pas-7); align-items: center; }
+  .accueil__image { display: block; border-radius: var(--rayon-grand); overflow: hidden; border: var(--trait); background: var(--fond-photo); }
+  .accueil__image img { width: 100%; aspect-ratio: 4 / 3.3; object-fit: cover; }
+  .grille.grille--seul { grid-template-columns: 1fr; }
+  .grille--seul .article { flex-direction: row; }
+  .grille--seul .photo { flex: 0 0 58%; aspect-ratio: 4 / 3; border-bottom: 0; border-right: var(--trait); }
+  .grille--seul .article__corps { padding: var(--pas-6); justify-content: center; }
+  .grille--seul .article__prix { margin-top: var(--pas-3); }
+  .grille--seul .article .bouton { width: auto; align-self: flex-start; }
+  .appel { padding: var(--pas-8) var(--pas-7); }
+  .wa-flottant { display: none; }
+}

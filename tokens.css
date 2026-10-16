@@ -1,0 +1,85 @@
+/* Cheick Service — jetons de l'allure
+   Parti pris : un showroom de quartier dans le téléphone. Le meuble en grand,
+   son prix tout de suite lisible, le bouton WhatsApp sous le pouce. */
+
+:root {
+  /* Accent — vert WhatsApp assombri (teinte 145°) : on reconnaît l'action d'un coup d'œil.
+     Sert UNIQUEMENT aux boutons « Commander ». */
+  --accent-50:  #EEF8F1;
+  --accent-100: #D8F0DF;
+  --accent-200: #B2E0C1;
+  --accent-300: #7FCA99;
+  --accent-400: #4BB173;
+  --accent-500: #25954F;
+  --accent-600: #1C7C41;
+  --accent-700: #176536;
+  --accent-800: #134F2B;
+  --accent-900: #0F3A21;
+  --accent-950: #082414;
+
+  /* Neutres teintés bois (teinte 30°) : kraft clair → wengé */
+  --neutre-50:  #FAF6F0;
+  --neutre-100: #F3ECE2;
+  --neutre-150: #F6EFE4;
+  --neutre-200: #E6DACB;
+  --neutre-300: #D2C1AC;
+  --neutre-400: #B09C85;
+  --neutre-500: #8C7863;
+  --neutre-600: #6E5C4A;
+  --neutre-700: #554638;
+  --neutre-800: #3D3128;
+  --neutre-900: #2A211A;
+  --neutre-950: #1A140F;
+
+  /* Rôles */
+  --fond: var(--neutre-150);          /* kraft */
+  --surface: #FFFDF9;                 /* carte produit */
+  --fond-photo: var(--neutre-100);
+  --blanc: #FFFFFF;                   /* fond des photos détourées sur blanc */
+  --texte: var(--neutre-900);         /* 13.8:1 sur fond, 15.5:1 sur surface */
+  --texte-doux: var(--neutre-600);    /* 5.6:1 sur fond, 6.3:1 sur surface */
+  --bordure: var(--neutre-300);
+  --bordure-forte: var(--neutre-400);
+  --inverse-fond: var(--neutre-900);
+  --inverse-texte: var(--neutre-150); /* 13.8:1 */
+  --inverse-doux: var(--neutre-300);  /* 9.0:1 */
+  --action: var(--accent-600);        /* blanc dessus : 5.2:1 */
+  --action-survol: var(--accent-700); /* blanc dessus : 7.1:1 */
+  --action-texte: #FFFFFF;
+  --focus: var(--accent-500);
+  --badge-fond: var(--accent-50);
+  --badge-texte: var(--accent-800);
+
+  /* Typographie — Bitter (titres, prix) + Karla (texte) */
+  --police-titre: "Bitter", Georgia, "Times New Roman", serif;
+  --police-texte: "Karla", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --corps: 1.0625rem;   /* 17px */
+  --ligne: 1.55;
+  --taille-titre-1: clamp(2rem, 7.5vw, 3.25rem);
+  --taille-titre-2: clamp(1.5rem, 5vw, 2.125rem);
+  --taille-titre-3: 1.1875rem;
+  --taille-prix: 1.625rem;
+  --taille-petit: 0.9375rem;
+  --taille-etiquette: 0.8125rem;
+  --graisse-texte: 400;
+  --graisse-forte: 700;
+  --graisse-titre: 700;
+  --graisse-prix: 800;
+
+  /* Formes — deux rayons contrastés, séparation au trait */
+  --rayon-petit: 6px;    /* boutons, badges */
+  --rayon-grand: 16px;   /* cartes, photos */
+  --trait: 1px solid var(--bordure);
+  --ombre-flottante: 0 6px 20px rgba(42, 33, 26, 0.18); /* seulement le bouton WhatsApp fixe */
+
+  /* Espace — unité 4px, échelle aérée */
+  --pas-1: 4px;  --pas-2: 8px;  --pas-3: 12px; --pas-4: 16px;
+  --pas-5: 24px; --pas-6: 32px; --pas-7: 48px; --pas-8: 64px; --pas-9: 96px;
+  --hauteur-bouton: 52px;
+  --largeur-max: 1120px;
+  --gouttiere: 16px;
+
+  /* Mouvement */
+  --duree-survol: 150ms;
+  --courbe: cubic-bezier(.2, .7, .3, 1);
+}
